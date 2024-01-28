@@ -1,0 +1,11 @@
+from pytube import YouTube
+
+try:
+    url = input("Inserte el link del video: ")
+    yt = YouTube(url)
+    video = yt.streams.get_highest_resolution()
+    video.download()
+    print("Video descargado :D")
+
+except Exception as e:
+    print("Link mal puesto")
